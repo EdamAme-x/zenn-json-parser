@@ -28,7 +28,7 @@ function removeSpaces(str): string {
 }
 
 function JSONParser(text: string): {
-  [key: string]: string
+  [key: string]: any
 } {
   const json = {};
 
