@@ -11,10 +11,28 @@ const sample = `
 }
 `;
 
-function JSONParser(string: string): {
+function removeSpaces(str): string {
+  let result = '';
+  let quoted = false;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === '"') {
+      quoted = !quoted;
+      result += '"';
+    } else if (str[i] !== ' ' || quoted) {
+      result += str[i];
+    }
+  }
+
+  return result;
+}
+
+function JSONParser(text: string): {
   [key: string]: string
 } {
   const json = {};
+
+  text = removeSpaces(text)
   
   return json;
 }
