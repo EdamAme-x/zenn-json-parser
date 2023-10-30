@@ -33,6 +33,11 @@ function JSONParser(text: string): {
   const json = {};
 
   text = removeSpaces(text)
+
+  let target = "";
+  let next = "";
+  let pointer = 0;
+  const length = text.length;
   
   return json;
 }
